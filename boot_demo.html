@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<link>
+<link lang="en">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="../css/bootstrap.css" />
+<script src="../js/jquery.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="border border-danger"></h1>
+        <!-- <div style="font: italic 700 12px 'Microsoft Yahei'">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Sequi, consequatur.</div>
+        <div class="row no-gutters">
+            <div class="border col-lg-3 col-md-3 col-sm-12">1</div>
+            <div class="border col-lg-6 col-md-9 col-sm-12">2</div>
+            <div class="border col-lg-3 d-md-none col-sm-12 d-lg-block">3</div>
+        </div> -->
+        <!-- 学子商城1F结构响应式布 
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .h-377 {
+                height: 377px;
+            }
+
+            .h-233 {
+                height: 233px;
+            }
+        </style>
+        <div class="row no-gutters ">
+            <div class="col-md-7 col-sm-12 mb-2">
+        注意这里的外边的div不用设置宽度，因为col就是它的宽度
+        <div class="h-377 mr-md-2 mr-sm-0 border bg-danger">1</div>
+    </div>
+    <div class="col-md-5 col-sm-12 mb-2">
+        <div class="h-377 border bg-danger">2</div>
+    </div>
+    <div class="col-md-5 col-sm-12">
+        <div class=" h-233 border bg-danger mr-sm-0 mr-md-2">3</div>
+    </div>
+    <div class="col-md-7 col-sm-12">
+        <div class="h-233 row no-gutters border bg-danger">
+            <div class="col-4">
+                <div class="ml-0 h-233 border">1</div>
+            </div>
+            <div class="col-4">
+                <div class="ml-1 h-233 border">2</div>
+            </div>
+            <div class="col-4">
+                <div class="ml-1 h-233 border">3</div>
+            </div>
+        </div>
+    </div>
+    </div>-->
+        <script>
+            //闭包对象 小孩存压岁钱-外层函数用带变量名的
+            // function parent() {
+            //     var zong = 1000;
+            //     return function (money) {
+            //         zong -= money;
+            //         console.log(`花了${money},还剩${zong}`);
+            //     }
+            // }
+            // var obj = parent();
+            // obj(200);
+            // obj(200);
+            // obj(100);
+            // obj = null;
+            //闭包对象 小孩存压岁钱-外层函数用不带变量名的匿名函数
+
+            // var pay = (function () {
+            //     var zong = 1000;
+            //     return function (money) {
+            //         zong -= money;
+            //         console.log(`花了${money},还剩${zong}`);
+            //     }
+            // })();
+            // pay = null;
+            // console.log(pay(100));
+            // console.log(pay(100));
+
+            // var getValue, setValue;
+            // (function () {
+            //     var secret = 0;
+            //     getValue = function () {
+            //         return secret;
+            //     }
+            //     setValue = function (value) {
+            //         secret = value;
+            //     }
+            // })();
+            // getValue = null;
+            // setValue = null;
+            // console.log(getValue());
+            // setValue(100);
+            // console.log(getValue());
+            // secret = 0;
+            // console.log(getValue());
+
+            // 练习：人民币转换美元和欧元 法一：
+            // var rmb$ = (function () {
+            //     var rate = 0.1639;
+            //     return function (rmb) {
+            //         return rmb * rate;
+            //     }
+            // })();
+            // rmb$ = null;
+            // console.log(rmb$(5000));
+
+            // var rmbEuro = (function () {
+            //     var rate = 0.1449;
+            //     return function (rmb) {
+            //         return rmb * rate;
+            //     }
+            // })();
+            // rmbEuro = null;
+            // console.log(rmbEuro(5000));
+            // 法二：转化率不是写死的值了，可以根据自己写的转换率的不同而转换成不同国家的金额
+            // function parent(rate) {
+            //     return function (rmb) {
+            //         return rmb * rate;
+            //     }
+            // }
+            // parent = null;
+            // var rmb$ = parent(0.1639);
+            // console.log(rmb$(5000));
+            // var rmbEuro = parent(0.1449);
+            // console.log(rmbEuro(5000));
+
+            // js面向对象
+            //想创建一个对象lilei，保存李磊的两个属性: 学生姓名、学生年龄和一个李磊会做的事儿:自我介绍
+            // var lilei = {
+            //     sname: "Li Lei",
+            //     sage: 11,
+            //     intr: function () {
+            //         console.log(`I'm ${this.sname}, I'm ${this.sage}`)
+            //     }
+            // }
+            // //释放对象
+            // lilei = null;
+            // //想获取李磊的年龄
+            // console.log(lilei.sage);
+            // //想请李磊做个自我介绍
+            // lilei.intr();
+            // //过了一年，李磊长了一岁
+            // lilei.sage++;
+            // //再获取李磊的年龄
+            // console.log(lilei.sage);
+            // //再请李磊做个自我介绍
+            // lilei.intr();
+            // js面向对象。实现面向对象的基本要求 / 实现面向对象的步骤：1.封装（在程序中，用对象来描述一个事物的属性和功能）2.继承（继承其它对象的属性和方法）3.多态（可以以多种不同形态来运行函数和方法）
+            // 1.封装 ——创建对象{
+            //     01-创建一个函数对象：1）：{}方式创建对象 2）：new object () 方式创建。不能再（）中直接添加成员，与关联数组的方式添加成员相同，对象的底层就是关联数组->对象["属性名"]
+            //     02-创建一个对象模板，可以创建多个类型相同结构相同的，只是属性值不同的对象（节省代码，结构简单）}
+            // var hmm = {
+            //     hname: "韩梅梅",
+            //     age: 18,
+            //     gender: "女",
+            //     arti: function () {
+            //         console.log(`我叫${this.hname}今年${this.age}岁性别${this.gender}`);
+            //     }
+            // };
+            // hmm = null;
+            // console.log(hmm.hname);
+            // console.log(hmm.age);
+            // console.log(hmm.gender);
+            // console.log(hmm.arti());
+            // var lilei = new Object();
+            // lilei.name = "li lei";
+            // lilei.age = 23;
+            // lilei.arti = function () {
+            //     console.log(`I am ${this.name},${this.age}`);
+            // }
+            // lilei = null;
+            // console.log(lilei.name);
+            // console.log(lilei.age);
+            // console.log(lilei.arti());
+            //创建对象模板步骤： 1.用一个函数创建函数模板 函数名不能是摸一个对象名，而是某一类的类名，2.用new调用对象模板，创建一个空对象调用函数，并传递实参：属性值，3.打印执行
+            // function emp(ename, age, gender) {
+            //     this.ename = ename;//this 指的是new新创建的对象，没new指的是windows全局作用域下的一个变量（会造成全局污染，占内存/内存泄漏）
+            //     this.age = age;
+            //     this.gender = gender;
+            //     this.arti = function () { return this.ename + "今年" + this.age + "性别" + this.gender };
+            // }
+            // var lilei = new emp('lilei', 30, '男');
+            // lilei = null;
+            // console.log(lilei.arti());
+
+
+            //对象模板定义对象的方法 - 练习
+            // 原型对象-》将共享的属性和方法放到一起的对象（爸爸）
+            // function student(sname, age) {
+            //     this.sname = sname;
+            //     this.age = age;
+            //     //this.arti = myarti;//myarti 它作为一个函数的地址复制给属性arti不是作为一个function 函数直接赋值给属性arti；
+            // }
+            // student.prototype.myarti = function () {
+            //     return `我叫${this.sname}今年${this.age}`;
+            // }
+            // var lilei = new student('li lei', 20);
+            // var hmm = new student('韩梅梅', 40);
+            // // lilei = null;
+            // // hmm = null;
+            // // console.log(lilei);
+            // // console.log(hmm);
+            // // console.log(lilei.arti());
+            // // console.log(hmm.arti());
+            // console.log(lilei.myarti());
+            // console.log(hmm.myarti());
+
+            // this关键字{ 1.this在函数中 / 方法中指的是当前对象（调用函数 / 方法的点前面的对象）2.this在构造函数中中（像 -》对象模板）指的是new 新创建的对象 }
+
+
+            // function Hero() {
+            //     this.name = "jscript";
+            // }
+            // Hero.prototype.name = "javascript";
+            // var hero = new Hero();
+            // hero.age = 18;
+            // // 
+            // delete Hero.prototype.name;
+            // console.log(hero.name);
+        </script>
+    </div>
+</body>
+
+</html>
