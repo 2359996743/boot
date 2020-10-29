@@ -1,0 +1,24 @@
+/* 手写文本对齐方式的媒体查询 */
+@media (min-width: 576px) {
+    .text-sm-justify {
+        text-align: justify !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .text-md-justify {
+        text-align: justify !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .text-lg-justify {
+        text-align: justify !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text-xl-justify {
+        text-align: justify !important;
+    }
+}
